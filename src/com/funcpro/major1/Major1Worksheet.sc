@@ -9,6 +9,7 @@ object Major1Worksheet {
   
   	def fib(x:Int):Int ={
   		
+  				
 	  	if(x == 0){
 	  		0
 	  	}else if(x == 1){
@@ -18,13 +19,7 @@ object Major1Worksheet {
 	  	}
   	}                                         //> fib: (x: Int)Int
   	
-  	
-  	println(fib(1));                          //> 1
-  	println(fib(2));                          //> 1
-		println(fib(3));                  //> 2
-  	println(fib(4));                          //> 3
-  	println(fib(5));                          //> 5
-		println(fib(6));                  //> 8
+  	fib(6);                                   //> res0: Int = 8
 		
    /**
   2.)
@@ -48,41 +43,35 @@ object Major1Worksheet {
   **/
   
   def factorial(x:Int):Int ={
-		  
-		  if(x>=1){
-		  	factorial(x) * factorial(x-1);
-		  	
-		  }else{
-		  	0
-			}
-  	
+		
+		 val y = 0;
+		 if(x==0){
+		  y
+		 }else{
+			 	if(x == 1){
+			 		x
+			 	}else{
+				 	x * (x-1)
+				 	print(x + " ");
+					factorial(x-1);
+			 	}
+		 }
   }                                               //> factorial: (x: Int)Int
   
-  factorial(3);                                   //> java.lang.StackOverflowError
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet$.factorial$1(oneThis.Major1Worksheet.scala:53
-                                                  //| )
-                                                  //| 	at oneThis.Major1Worksheet
-                                                  //| Output exceeds cutoff limit.
+	factorial(6);                             //> 6 5 4 3 2 res1: Int = 1
   
+  /**
+  4.)
+  **/
   
+  def sum(x:Int):Int ={
+  	
+  	if(x == 0){
+  		0;
+  	}else{
+  		sum((x/10)%10) + sum((x/100)%10);
+  	}
+  }                                               //> sum: (x: Int)Int
+  
+  sum(123)                                        //> res2: Int = 0
 }
